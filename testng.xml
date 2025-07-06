@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="E_CommerceTesting">
+    <test name="Automation Test">
+        <classes>
+            <class name="test.HomeTest.H01_HomeTest"/>
+            <class name="test.RegistrationTest.R01_RegisterTest"/>
+            <class name="test.RegistrationTest.R02_RegisterTest_NegativeCase"/>
+            <class name="test.LoginTest.L01_LoginTest"/>
+            <class name="test.LoginTest.L02_LoginTest_NegativeCase"/>
+        </classes>
+    </test>
+</suite>
