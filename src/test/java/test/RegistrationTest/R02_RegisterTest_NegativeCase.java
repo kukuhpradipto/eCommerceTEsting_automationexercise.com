@@ -74,7 +74,7 @@ public class R02_RegisterTest_NegativeCase extends BaseTest {
 
         }
         else {
-            test.fail("Tooltip message validation failed or did not appear as expected");
+            test.fail("Message validation failed or did not appear as expected");
         }
     }
 

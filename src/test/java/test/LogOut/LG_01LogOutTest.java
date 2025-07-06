@@ -12,7 +12,8 @@ public class LG_01LogOutTest extends BaseTest {
     @DataProvider(name = "LogOutData")
     public Object[][] getLogOutData(){
         return new Object[][]{
-                {"kukuhpradipto1@gmail.com","Password123","Kukuh1"}
+                {"kukuhpradipto1@gmail.com","Password123","Kukuh1"},
+                {"kukuhpradipto2@gmail.com","Password123","Kukuh2"}
         };
     }
 

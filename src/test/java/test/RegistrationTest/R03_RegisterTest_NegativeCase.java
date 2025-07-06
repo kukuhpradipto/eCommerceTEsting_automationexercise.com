@@ -14,7 +14,7 @@ public class R03_RegisterTest_NegativeCase extends BaseTest {
 
     @DataProvider(name = "NegativeCaseInputRegisterForm")
     public Object[][] getR03_RegisterTest_NegativeCase(){
-        return ExcelUtils.readExcel("D:\\QA\\eCommerceTEsting_automationexercise.com\\src\\testdata\\LoginForm.xlsx","Sheet2");
+        return ExcelUtils.readExcel("D:\\QA\\eCommerceTEsting_automationexercise.com\\src\\testdata\\RegisterForm.xlsx","Sheet2");
     }
 
     @Test(dataProvider = "NegativeCaseInputRegisterForm",priority = 1)

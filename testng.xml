@@ -2,11 +2,9 @@
 <suite name="E_CommerceTesting">
     <test name="Automation Test">
         <classes>
-            <class name="test.HomeTest.H01_HomeTest"/>
             <class name="test.RegistrationTest.R01_RegisterTest"/>
             <class name="test.RegistrationTest.R02_RegisterTest_NegativeCase"/>
-            <class name="test.LoginTest.L01_LoginTest"/>
-            <class name="test.LoginTest.L02_LoginTest_NegativeCase"/>
+            <class name="test.RegistrationTest.R03_RegisterTest_NegativeCase"/>
         </classes>
     </test>
 </suite>

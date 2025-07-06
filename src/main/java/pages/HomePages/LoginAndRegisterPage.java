@@ -99,7 +99,7 @@ public class LoginAndRegisterPage {
     }
 
     public void verifyEmailIsReadyExist(){
-        String actualResult = String.valueOf(driver.findElement(By.xpath("//p[normalize-space()='Email Address already exist!']"))).toLowerCase();
+        String actualResult = String.valueOf(driver.findElement(By.xpath("//p[normalize-space()='Email Address already exist!']")).getText()).toLowerCase();
         String expectedResult = "Email Address already exist!".toLowerCase();
         Assert.assertEquals(actualResult, expectedResult);
     }

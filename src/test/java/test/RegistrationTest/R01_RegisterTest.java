@@ -13,7 +13,7 @@ public class R01_RegisterTest extends BaseTest {
 
     @DataProvider(name = "loginRegister")
     public Object[][] getLoginRegister() {
-        return ExcelUtils.readExcel("D:\\QA\\e-commerceTesting\\src\\testdataD:\\QA\\eCommerceTEsting_automationexercise.com\\src\\testdata\\RegisterForm.xlsx","Sheet1");
+        return ExcelUtils.readExcel("D:\\QA\\eCommerceTEsting_automationexercise.com\\src\\testdata\\RegisterForm.xlsx","Sheet1");
     }
 
 

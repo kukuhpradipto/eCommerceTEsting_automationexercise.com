@@ -59,7 +59,7 @@ src/
 
 * Java 11+
 * Maven
-* IDE (e.g., IntelliJ IDEA, Eclipse)
+* IDE (IntelliJ IDEA)
 
 ### How to Run
 
