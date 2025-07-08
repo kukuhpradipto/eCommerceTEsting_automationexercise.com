@@ -64,8 +64,7 @@ public class LoginAndRegisterPage {
         WebElement locator = driver.findElement(By.xpath("//input[@placeholder='Name']"));
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        return (String) js.executeScript("return arguments[0].validationMessage;", locator);
-
+        return (String) js.executeScript("return arguments[0].validationMessage", locator);
     }
 
     public String toolTipsValidationEmail(){
@@ -73,6 +72,7 @@ public class LoginAndRegisterPage {
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         return (String) js.executeScript("return arguments[0].validationMessage", locator);
+
     }
 
 

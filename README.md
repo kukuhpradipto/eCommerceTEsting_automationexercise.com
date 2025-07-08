@@ -1,3 +1,6 @@
+> #### Repository will always be updated 
+
+
 # 🛍️ eCommerce Testing Automation - automationexercise.com
 
 Automated testing project built using Selenium WebDriver, TestNG, Page Object Model (POM), Apache POI, and ExtentReports.

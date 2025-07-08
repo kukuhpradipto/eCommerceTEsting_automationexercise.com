@@ -58,7 +58,10 @@ public class HomePage {
         Assert.assertTrue(driver.findElements(By.xpath("//a[normalize-space()='Logout']")).isEmpty(),"Element should not be visible");
     }
 
+    public void goToContactUsPage(){
+        driver.findElement(By.xpath("//a[normalize-space()='Contact us']")).click();
 
+    }
 
 
 }
