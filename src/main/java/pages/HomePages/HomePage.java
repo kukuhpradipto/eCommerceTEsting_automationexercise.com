@@ -64,4 +64,9 @@ public class HomePage {
     }
 
 
+    public void goToCasePage(){
+        driver.findElement(By.xpath("//a[normalize-space()='Test Cases']")).click();
+    }
+
+
 }
