@@ -43,15 +43,11 @@ Goals:
 src/
 ├── base/                    # Base classes (e.g., BaseTest)
 ├── pages/                   # Page Object Models
-│   ├── HomePages/
-│   ├── RegistrationPages/
-│   └── LoginPages/
-├── test/                   # Test classes grouped by features
-│   ├── LoginTest/
-│   ├── RegistrationTest/
-│   └── LogoutTest/
-├── testdata/               # Excel files used for data-driven testing
-└── utils/                  # Utility classes (Excel, Reporting, etc.)
+
+├── test/                    # Test classes grouped by features
+
+├── testdata/                # Excel files used for data-driven testing
+└── utils/                   # Utility classes (Excel, Reporting, etc.)
 ```
 
 ---
@@ -89,25 +85,6 @@ TestNG will execute the tests as per `testng.xml` configuration.
 
 ---
 
-## 🧪 Test Coverage
-
-### ✅ Login Test
-
-* L01: Positive Login (valid credentials)
-* L02: Negative Login (blank fields, invalid inputs)
-
-### ✍️ Registration Test
-
-* R01: Positive Registration
-* R02: Negative Registration - duplicate user
-* R03: Negative Registration - form field validations
-
-### 🔒 Logout Test
-
-* LG01: Logout scenario after login
-
----
-
 ## 📸 Reporting
 
 📍 Using **ExtentReports** to generate a visual HTML report for every test execution.
@@ -128,10 +105,6 @@ Features:
 Integrated with **Apache POI** to read test input from Excel files:
 
 * Located in: `src/testdata/*.xlsx`
-* Examples:
-
-    * `LoginForm.xlsx`
-    * `RegisterForm.xlsx`
 
 Supports:
 * Multiple input sets
@@ -139,121 +112,3 @@ Supports:
 * Dynamic testing via `@DataProvider`
 
 ---
-
-## 📌 Sample Test Case
-
-
-### ✍️ Registration Test (R01 - Positive Registration)
-
-```java
-@Test(priority = 1)
-public void RegisterTest_PositiveCase() {
-    test = extent.createTest("Positive Case Registration: Successful account creation");
-
-    homePage.goToLoginRegister();
-    loginRegisterPage.userNameRegister("kukuhuser");
-    loginRegisterPage.emailRegister("kukuh@gmail.com");
-    loginRegisterPage.signUpButton();
-    
-    registrationPage.fillRegistrationForm(...);
-    registrationPage.buttonCreateAccountRegistration();
-
-    String successMessage = registrationPage.verifyAccountCreated();
-    Assert.assertEquals(successMessage, "ACCOUNT CREATED!");
-    test.pass("Account successfully created");
-}
-```
-
-### ❌ Registration Test (R02 - Negative Registration)
-
-```java
-@Test(priority = 2)
-public void RegisterTest_DuplicateEmail() {
-    test = extent.createTest("Negative Case Registration: Email already registered");
-
-    homePage.goToLoginRegister();
-    loginRegisterPage.userNameRegister("kukuhuser");
-    loginRegisterPage.emailRegister("kukuh@gmail.com"); // existing email
-    loginRegisterPage.signUpButton();
-
-    String warning = loginRegisterPage.getEmailExistWarning();
-    Assert.assertTrue(warning.contains("Email Address already exist!"));
-    test.pass("Displayed warning for duplicate email: " + warning);
-}
-```
-
-### ❌ Registration Test (R03 - Negative Registration)
-
-```java
-@Test(dataProvider = "NegativeCaseInputRegisterForm")
-public void RegisterTest_NegativeCase(String username, String email, String password, ...) {
-    if (password.trim().isEmpty()) {
-        test = extent.createTest("Negative Case Registration: Password is blank");
-    }
-
-    loginRegisterPage.userNameRegister(username);
-    loginRegisterPage.emailRegister(email);
-    loginRegisterPage.signUpButton();
-
-    registrationPage.passwordRegistration(password);
-    registrationPage.buttonCreateAccountRegistration();
-
-    String tooltip = toolTips.passwordRegistrationToolTipsValidation();
-    Assert.assertEquals(tooltip, "Please fill in this field.");
-    test.pass("Tooltip appeared: " + tooltip);
-}
-```
-
-### ✅ Login Test (L01 - Positive Login)
-
-```java
-@Test(priority = 1)
-public void LoginTest_PositiveCase() {
-    test = extent.createTest("Positive Case Login: Login with valid credentials");
-
-    homePage.goToLoginRegister();
-    loginPage.enterEmail("kukuh@gmail.com");
-    loginPage.enterPassword("validpassword");
-    loginPage.clickLoginButton();
-
-    Assert.assertTrue(dashboardPage.isUserLoggedIn());
-    test.pass("User successfully logged in and redirected to dashboard");
-}
-```
-
-### ❌ Login Test (L02 - Negative Login)
-
-```java
-@Test(dataProvider = "invalidLogin")
-public void LoginTest_NegativeCase(String email, String password) {
-    test = extent.createTest("Negative Case Login: Invalid login with email: " + email);
-
-    homePage.goToLoginRegister();
-    loginPage.enterEmail(email);
-    loginPage.enterPassword(password);
-    loginPage.clickLoginButton();
-
-    Assert.assertTrue(loginPage.getErrorMessage().contains("incorrect"));
-    test.pass("Login failed as expected with invalid credentials");
-}
-```
-
-### 🔓 Logout Test (LG01 - Logout Scenario)
-
-```java
-@Test(priority = 1)
-public void LogoutTest_PositiveCase() {
-    test = extent.createTest("Positive Case Logout: Log out after successful login");
-
-    homePage.goToLoginRegister();
-    loginPage.enterEmail("kukuh@gmail.com");
-    loginPage.enterPassword("validpassword");
-    loginPage.clickLoginButton();
-
-    dashboardPage.clickLogoutButton();
-    Assert.assertTrue(homePage.isAtHomePage());
-    test.pass("User successfully logged out and redirected to home page");
-}
-```
-
-
