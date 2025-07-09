@@ -68,5 +68,9 @@ public class HomePage {
         driver.findElement(By.xpath("//a[normalize-space()='Test Cases']")).click();
     }
 
+    public void goToProductPage(){
+        driver.findElement(By.xpath("//a[@href='/products']")).click();
+    }
+
 
 }

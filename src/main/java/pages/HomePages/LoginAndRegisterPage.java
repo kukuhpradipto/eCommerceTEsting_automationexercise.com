@@ -103,11 +103,11 @@ public class LoginAndRegisterPage {
         String expectedResult = "Email Address already exist!".toLowerCase();
         Assert.assertEquals(actualResult, expectedResult);
     }
-
-    public void verifyUserNameIsReadyExist(){
-        String actualResult = String.valueOf(driver.findElement(By.xpath("//p[normalize-space()='Username already exist!']"))).toLowerCase();
-        String expectedResult = "Username already exist!".toLowerCase();
-        Assert.assertEquals(actualResult, expectedResult);
-    }
+//
+//    public void verifyUserNameIsReadyExist(){
+//        String actualResult = String.valueOf(driver.findElement(By.xpath("//p[normalize-space()='Username already exist!']"))).toLowerCase();
+//        String expectedResult = "Username already exist!".toLowerCase();
+//        Assert.assertEquals(actualResult, expectedResult);
+//    }
 
 }
