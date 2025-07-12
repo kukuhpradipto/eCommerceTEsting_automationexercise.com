@@ -60,29 +60,6 @@ src/
 * Maven
 * IDE (IntelliJ IDEA)
 
-### How to Run
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/kukuhpradipto/eCommerceTEsting_automationexercise.com
-```
-
-2. Import as Maven project in your IDE.
-3. Install dependencies:
-
-```bash
-mvn clean install
-```
-
-4. Run the test suite:
-
-```bash
-mvn test
-```
-
-TestNG will execute the tests as per `testng.xml` configuration.
-
 ---
 
 ## 📸 Reporting
